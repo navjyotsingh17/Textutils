@@ -2,11 +2,13 @@ import React from 'react'
 
 function About(props) {
 
+    //setting black, white, light and dark color for the dark and light mode
     let myStyle = {
         color: props.mode === 'dark' ? 'white' : '#042743',
         backgroundColor: props.mode === 'dark' ? 'rgb(36 74 104)' : 'white',
     }
 
+    //returing the about accordian body
     return (
         <div className="container">
             <h1 className="my-3" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>About Us</h1>

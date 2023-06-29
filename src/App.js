@@ -11,11 +11,13 @@ import {
 
 function App() {
 
-
+//state for the light and dark mode
   const [mode , setMode]= useState("light");
   
+  //state for the alert
   const [alert, setAlert] = useState(null);
 
+  //showing the alert below the navbar
   const showAlert=(message, type)=>{
     setAlert({
       msg:message,
@@ -27,6 +29,7 @@ function App() {
     }, 1500);
   }
 
+  //removing the color classes so that other color theme cal be applied on the app
   const removeBodyClasses= ()=>{
     document.body.classList.remove('bg-primary');
     document.body.classList.remove('bg-success');
@@ -36,6 +39,7 @@ function App() {
     document.body.classList.remove('bg-warning');
   }
 
+  //method to change the theme of the application and then showing the alert
   const toggleMode=(cls)=>{
     removeBodyClasses();
      console.log(cls);
@@ -53,6 +57,8 @@ function App() {
       // document.title = "Textutils - LightMode";
     }
   }
+
+  //sending the title for navabr as prosp and routing to about page
   return (
     <>
     <Router>

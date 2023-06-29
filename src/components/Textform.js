@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 export default function Textform(props) {
 
+    //uppercase method
     const handleUpClick= ()=> {
        // console.log("upClick was clicked"+ text)
         let newText= text.toUpperCase();
@@ -12,37 +13,45 @@ export default function Textform(props) {
        
     }
 
+    //lowercase method
     const handleLowClick = () => {
         let newText = text.toLowerCase();
         setText(newText);
         props.showAlert("Your text has been converted to lowercase", "success");
     }
 
+    //method to write the text in the text box
     const handleOnChange = (event) => {
        // console.log("onChange was clicked")
        // console.log(event.target.value);
         setText(event.target.value);
     }
 
+    //method to clear the textbox
     const handleClearClick = ()=>{
         setText("");
         props.showAlert("Textbox has been cleared", "success");
     }
 
+    //method to cpoy the text written in the text box
     const handleCopy=()=>{
         navigator.clipboard.writeText(text); 
         document.getSelection().removeAllRanges();
         props.showAlert("Copied to clipboard", "success");
     }
 
+    //method to remve extra spaces betweeen words
     const handleExtraSpaces=()=>{
         let newText=text.split(/[ ]+/);
         setText(newText.join(" "));
         props.showAlert("Extra space from your text has been removed", "success");
     }
 
-
+    //made a state to tell the default state and to set the state of the text
     const [ text, setText ]= useState("");
+
+
+    //returning the text box, chaning the color for dark mode, all the buttons etc
   return (
     <>
           <div className="mb-3" style={{ color: props.mode === "dark" ? "white" : "rgb(4 3 51)" }}>
