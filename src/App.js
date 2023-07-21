@@ -47,18 +47,19 @@ function App() {
     if(mode === "light"){
       setMode("dark");
       document.body.style.background = "rgb(4 3 51)";
-      showAlert("Dark mode has been enabled","success");
+      showAlert(cls+" mode has been enabled","success");
       // document.title = "Textutils - DarkMode";
     }
+    
     else{
       setMode("light");
       document.body.style.background = "white";
-      showAlert("Light mode has been enabled", "success")
+      showAlert(cls+" mode has been enabled", "success")
       // document.title = "Textutils - LightMode";
     }
   }
 
-  //sending the title for navabr as prosp and routing to about page
+  //sending the title for navabr as props and routing to about page
   return (
     <>
     <Router>

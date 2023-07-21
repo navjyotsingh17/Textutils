@@ -24,7 +24,7 @@ export default function Textform(props) {
     const handleOnChange = (event) => {
        // console.log("onChange was clicked")
        // console.log(event.target.value);
-        setText(event.target.value);
+        setText(event.target.value); // this line grab the value what user is writing and set the state of the text to the value entered by the user.
     }
 
     //method to clear the textbox
@@ -68,10 +68,14 @@ export default function Textform(props) {
 
           <div className="container my-4" style={{ color: props.mode === "dark" ? "white" : "rgb(4 3 51)" }}>
                 <h2>Text Summary</h2>
-                <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+
+                {/* In summary, the below code calculates the number of non-empty words (or substrings) in the text string by 
+                splitting the string into an array, filtering out any empty strings, and then counting the remaining elements in the filtered array. */}
+              <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+            
               <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} minutes to read</p>
                 <h2>Text Preview</h2>
-                <p>{text.length>0?text:"Nothing to preview!"}</p>
+                <p>{text.length > 0 ? text:"Nothing to preview!"}</p>
             </div>
     </>
     )

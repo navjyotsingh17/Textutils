@@ -15,3 +15,18 @@ code {
 .accordian-button::after{
   filter: invert(1);
 }
+
+.nav-item::after{
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: rgb(19, 176, 165);
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover::after{
+  transform: scale(1);
+}
