@@ -30,3 +30,18 @@ code {
 .nav-item:hover::after{
   transform: scale(1);
 }
+
+.navbar-brand::after{
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: rgb(19, 176, 165);
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover::after{
+  transform: scale(1);
+}
